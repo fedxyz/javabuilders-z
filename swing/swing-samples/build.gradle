@@ -17,3 +17,8 @@ sourceSets {
         }
     }
 }
+
+application {
+
+    mainClass = "org.javabuilders.swing.samples.SwingSamplesFrame"
+}

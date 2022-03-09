@@ -18,3 +18,8 @@ sourceSets {
         }
     }
 }
+
+application {
+
+    mainClass = "person.app.PersonApp"
+}
