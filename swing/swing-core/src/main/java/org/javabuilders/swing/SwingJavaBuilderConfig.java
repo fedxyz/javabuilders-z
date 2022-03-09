@@ -2,7 +2,6 @@ package org.javabuilders.swing;
 
 import static org.javabuilders.swing.SwingJavaBuilder.*;
 
-import java.applet.Applet;
 import java.awt.Button;
 import java.awt.Canvas;
 import java.awt.CardLayout;
@@ -188,7 +187,6 @@ public class SwingJavaBuilderConfig extends BuilderConfig implements IStringLite
 
 		//define aliases for AWT types
 		addType(
-				Applet.class,
 				Button.class, 
 				Canvas.class, 
 				Checkbox.class,
