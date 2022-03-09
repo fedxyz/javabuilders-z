@@ -1,4 +1,8 @@
+plugins {
+    id 'org.javabuilders.java-application-conventions'
+}
+
 dependencies {
-    compile project(":swing:swing-core")
-    compile project(":swing:swing-glazedlists")
+    implementation project(":swing:swing-core")
+    implementation project(":swing:swing-glazedlists")
 }
