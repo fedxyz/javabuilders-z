@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import com.formdev.flatlaf.FlatIntelliJLaf;
 import org.javabuilders.BuildResult;
 import org.javabuilders.annotations.DoInBackground;
 import org.javabuilders.event.BackgroundEvent;
@@ -86,7 +87,7 @@ public class PersonApp extends JFrame {
 				// activate internationalization
 				SwingJavaBuilder.getConfig().addResourceBundle("PersonApp");
 				try {
-					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+					FlatIntelliJLaf.setup();
 					new PersonApp().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

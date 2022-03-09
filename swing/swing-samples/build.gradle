@@ -6,3 +6,11 @@ dependencies {
     implementation project(":swing:swing-core")
     implementation project(":swing:swing-glazedlists")
 }
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/main/configs"
+        }
+    }
+}
