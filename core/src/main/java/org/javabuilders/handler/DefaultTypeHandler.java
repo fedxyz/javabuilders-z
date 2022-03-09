@@ -42,7 +42,7 @@ public class DefaultTypeHandler extends AbstractTypeHandler {
 		Object instance = null;
 		try {
 			Class<?> typeClass = BuilderUtils.getClassFromAlias(result, key, null);
-			instance = typeClass.newInstance();
+			instance = typeClass.getDeclaredConstructor().newInstance();
 			
 			if (logger.isDebugEnabled()) {
 				logger.debug("Created object instance of type: {}", typeClass.getName());
