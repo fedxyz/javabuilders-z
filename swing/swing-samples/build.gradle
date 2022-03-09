@@ -5,4 +5,15 @@ plugins {
 dependencies {
     implementation project(":swing:swing-core")
     implementation project(":swing:swing-glazedlists")
+
+    implementation 'com.formdev:flatlaf:2.0.1'
+    implementation 'com.formdev:flatlaf-intellij-themes:2.0.1'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/main/java"
+        }
+    }
 }

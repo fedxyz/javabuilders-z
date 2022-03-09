@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabuilders-z.iml" filepath="$PROJECT_DIR$/.idea/modules/javabuilders-z.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/javabuilders-z.swing.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/javabuilders-z.swing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.main.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.main.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.test.iml" />
     </modules>
   </component>
