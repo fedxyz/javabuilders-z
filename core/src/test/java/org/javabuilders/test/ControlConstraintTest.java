@@ -276,7 +276,7 @@ public class ControlConstraintTest {
 		assertEquals(control1,c.getControlName());
 		assertEquals(2,c.getHSpan());
 		assertEquals(3,c.getVSpan());
-		assertEquals(new Integer(4),c.getSizeGroup());
+		assertEquals(Integer.valueOf(4),c.getSizeGroup());
 		assertEquals(Size.MIN, c.getHSize());
 		assertEquals(Size.MAX, c.getVSize());
 	}
