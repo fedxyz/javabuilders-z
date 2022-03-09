@@ -26,7 +26,7 @@ public class YamlBuilder {
 	 * @param root Constructor
 	 */
 	public YamlBuilder(String root) {
-		_(root);
+		_1(root);
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class YamlBuilder {
 	 * @param yamlLine
 	 * @return
 	 */
-	private YamlBuilder _(String yamlLine) {
+	private YamlBuilder _1(String yamlLine) {
 		builder.append(yamlLine).append("\n");
 		return this;
 	}
@@ -45,7 +45,7 @@ public class YamlBuilder {
 	 */
 	public YamlBuilder ___(String yamlLine) {
 		nest();
-		return _(yamlLine);
+		return _1(yamlLine);
 	}
 
 	/**
