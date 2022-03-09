@@ -10,8 +10,8 @@ package org.javabuilders.swing.test.issues.resources.issue57;
 public final class Spot
 {
     private String stockName = "";
-    private Double bid = new Double(1);
-    private Double ask = new Double(2);
+    private Double bid = Double.valueOf(1);
+    private Double ask = Double.valueOf(2);
 
     /**
      * getStockName.
