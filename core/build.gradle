@@ -1,5 +1,9 @@
+plugins {
+    id 'org.javabuilders.java-library-conventions'
+}
+
 dependencies {
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-    compile "org.yaml:snakeyaml:1.14"
-    compile "commons-lang:commons-lang:2.6"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.yaml:snakeyaml:1.14"
+    implementation "commons-lang:commons-lang:2.6"
 }
