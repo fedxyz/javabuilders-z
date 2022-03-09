@@ -5,6 +5,6 @@ plugins {
 dependencies {
     api project(":swing:swing-core")
 
-    implementation "net.java.dev.glazedlists:glazedlists_java15:1.9.0"
+    api "net.java.dev.glazedlists:glazedlists_java15:1.9.0"
     implementation "janino:janino:2.5.10"
 }

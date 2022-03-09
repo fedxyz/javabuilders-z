@@ -105,13 +105,13 @@ public class GlazedListsUtils {
 		ClassStringBuilder bld = new ClassStringBuilder();
 		
 		//constructor
-		bld._("public %s(%s source) {",name, EventList.class.getName())
+		bld._1("public %s(%s source) {",name, EventList.class.getName())
 			.___("super(source);")
-			._("}\n");
+			._1("}\n");
 		
-		bld._("public Object get(int index) {")
+		bld._1("public Object get(int index) {")
 			.___("return ((%s)source.get(index)).%s();", source.getName(),getterName)
-			._("}");
+			._1("}");
 		
 		Class<?> clazz = CompilerUtils.compile(name, bld.toString(), ReadOnlyTransformedList.class);
 		ReadOnlyTransformedList list = (ReadOnlyTransformedList) clazz.getConstructor(EventList.class).newInstance(sourceList);

@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
-    implementation "org.yaml:snakeyaml:1.14"
-    implementation "commons-lang:commons-lang:2.6"
+    api "org.slf4j:slf4j-api:${slf4jVersion}"
+    api "org.yaml:snakeyaml:1.14"
+    api "commons-lang:commons-lang:2.6"
 }
