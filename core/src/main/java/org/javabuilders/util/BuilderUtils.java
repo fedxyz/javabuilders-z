@@ -744,7 +744,8 @@ public class BuilderUtils {
 
 		for (Field field : typeClass.getDeclaredFields()) {
 			allFields.put(field.getName(), field);
-			field.setAccessible(true);
+		//	field.setAccessible(true);
+			field.trySetAccessible();
 		}
 
 		typeClass = typeClass.getSuperclass();
@@ -752,9 +753,10 @@ public class BuilderUtils {
 			Field[] fields = typeClass.getDeclaredFields();
 			for (Field field : fields) {
 				int mod = field.getModifiers();
-				if (!Modifier.isStatic(mod) && (Modifier.isProtected(mod) || Modifier.isPublic(mod))) {
+				if (!Modifier.isStatic(mod) && (Modifier.isPublic(mod))) {
 					allFields.put(field.getName(), field);
-					field.setAccessible(true);
+					
+					field.trySetAccessible();
 				}
 			}
 
@@ -797,7 +799,8 @@ public class BuilderUtils {
 
 		for (Method method : typeClass.getDeclaredMethods()) {
 			allMethods.add(method);
-			method.setAccessible(true);
+			//method.setAccessible(true);
+			method.trySetAccessible();
 		}
 
 		typeClass = typeClass.getSuperclass();
@@ -805,9 +808,9 @@ public class BuilderUtils {
 			Method[] methods = typeClass.getDeclaredMethods();
 			for (Method method : methods) {
 				int mod = method.getModifiers();
-				if (!Modifier.isStatic(mod) && (Modifier.isProtected(mod) || Modifier.isPublic(mod))) {
+				if (!Modifier.isStatic(mod) && ( Modifier.isPublic(mod))) {
 					allMethods.add(method);
-					method.setAccessible(true);
+					method.trySetAccessible();
 				}
 			}
 
