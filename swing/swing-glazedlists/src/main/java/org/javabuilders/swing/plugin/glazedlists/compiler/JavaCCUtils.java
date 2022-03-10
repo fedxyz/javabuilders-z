@@ -131,7 +131,7 @@ public class JavaCCUtils {
 			}
 		}
 		
-		bld._("public class %s implements %s<%s> {",name,Comparator.class.getName(),type.getName())
+		bld._1("public class %s implements %s<%s> {",name,Comparator.class.getName(),type.getName())
 			.___("public int compare(%1$s o1, %1$s o2) {",type.getName())
 			._____("int compare = 0;");
 
@@ -159,7 +159,7 @@ public class JavaCCUtils {
 		}
 		bld._____("return compare;");
 		bld.___("}");
-		bld._("}");
+		bld._1("}");
 		
 		try {
 			c = (Comparator<?>)compileAndInstantiate(name, bld.toString());

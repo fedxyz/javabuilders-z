@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/javabuilders-z.buildSrc.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/javabuilders-z.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-core/javabuilders-z.swing.swing-core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-glazedlists/javabuilders-z.swing.swing-glazedlists.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-sample-person-app/javabuilders-z.swing.swing-sample-person-app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.test.iml" filepath="$PROJECT_DIR$/.idea/modules/swing/swing-samples/javabuilders-z.swing.swing-samples.test.iml" />
+    </modules>
+  </component>
+</project>

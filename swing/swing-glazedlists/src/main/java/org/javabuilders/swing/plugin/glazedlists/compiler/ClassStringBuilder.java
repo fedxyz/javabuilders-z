@@ -14,7 +14,7 @@ public class ClassStringBuilder  {
 	/**
 	 * Adds a line at 1 level of indentation
 	 */
-	public ClassStringBuilder _(String template, Object...params) {
+	public ClassStringBuilder _1(String template, Object...params) {
 		return add(0,template,params);
 	}
 	

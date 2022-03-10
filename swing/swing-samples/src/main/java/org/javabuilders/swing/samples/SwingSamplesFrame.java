@@ -16,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 
+import com.formdev.flatlaf.FlatIntelliJLaf;
 import org.javabuilders.BuildResult;
 import org.javabuilders.event.BuildAdapter;
 import org.javabuilders.event.BuildEvent;
@@ -29,8 +30,8 @@ public class SwingSamplesFrame extends JFrame {
 	//common init, used by unit tests as well
 	public static void init() {
     	try {
-    		
-    		SwingJavaBuilder.initSystemLookAndFeel();
+
+			FlatIntelliJLaf.setup();
     		
     		//register global resource bundle
     		SwingGlazedListsConfig.init();
