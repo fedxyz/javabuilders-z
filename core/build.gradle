@@ -1,12 +1,23 @@
 plugins {
     id 'org.javabuilders.java-library-conventions'
     id 'com.adarshr.test-logger' version '3.2.0'
+    id 'maven-publish'
 }
 
 dependencies {
     api "org.slf4j:slf4j-api:${slf4jVersion}"
     api "org.yaml:snakeyaml:1.14"
     api "commons-lang:commons-lang:2.6"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = 'javabuilder-z-core'
+
+            from components.java
+        }
+    }
 }
 
 testlogger {
