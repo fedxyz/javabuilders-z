@@ -1,5 +1,6 @@
 plugins {
     id 'org.javabuilders.java-library-conventions'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 dependencies {
@@ -7,4 +8,8 @@ dependencies {
 
     api "net.java.dev.glazedlists:glazedlists_java15:1.9.0"
     implementation "janino:janino:2.5.10"
+}
+
+testlogger {
+    theme 'mocha'
 }
