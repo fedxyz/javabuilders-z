@@ -1,5 +1,6 @@
 plugins {
     id 'org.javabuilders.java-application-conventions'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 dependencies {
