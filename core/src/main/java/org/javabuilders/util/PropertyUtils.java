@@ -1,6 +1,7 @@
 package org.javabuilders.util;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -62,7 +63,9 @@ public class PropertyUtils {
 		if (clazz != null) {
 			Method[] methods = clazz.getMethods();
 			for(Method method : methods) {
-				if (method.getName().startsWith("set") && method.getParameterTypes().length == 1		) {
+				int mod = method.getModifiers();
+				if (method.getName().startsWith("set") && method.getParameterTypes().length == 1 &&
+						Modifier.isPublic(mod)) {
 					bld.setLength(0);
 					bld.append(method.getName().substring(3,4).toLowerCase());
 					if (method.getName().length() > 4) {
@@ -180,9 +183,11 @@ public class PropertyUtils {
 			Method[] ms = instance.getClass().getMethods();
 			for(Method m  : ms) {
 				if (m.getName().equals(methodName) && m.getParameterTypes().length == 1) {
-					setter = m;
-					setter.setAccessible(true);
-					setters.put(key, setter);
+					boolean accessible = m.trySetAccessible();
+					if(accessible) {
+						setter = m;
+						setters.put(key, setter);
+					}
 					break;
 				}
 			}
@@ -202,9 +207,11 @@ public class PropertyUtils {
 			Method[] ms = instance.getClass().getMethods();
 			for(Method m  : ms) {
 				if (m.getName().equals(methodName) && m.getParameterTypes().length == 0 && m.getReturnType() != null) {
-					getter = m;
-					getter.setAccessible(true);
-					getters.put(key, getter);
+					boolean accessible = m.trySetAccessible();
+					if(accessible) {
+						getter = m;
+						getters.put(key, getter);
+					}
 					break;
 				}
 			}

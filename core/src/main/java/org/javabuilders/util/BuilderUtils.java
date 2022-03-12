@@ -270,8 +270,10 @@ public class BuilderUtils {
 		}
 
 		if (methodToCall != null) {
-			methodToCall.setAccessible(true); // make sure we can call it, even
-			// if it's private
+			boolean accessible = methodToCall.trySetAccessible();
+			if(!accessible) {
+				throw new BuildException("Unable to set accessible on method \"{0}\"", methodName);
+			}
 		} else {
 			throw new BuildException("Unable to find method to call for name \"{0}\"", methodName);
 		}
@@ -322,7 +324,10 @@ public class BuilderUtils {
 
 				// custom command?
 				if (method.getType() == ObjectMethod.MethodType.CustomCommand) {
-					method.getMethod().setAccessible(true);
+					boolean accessible = method.getMethod().trySetAccessible();
+					if(!accessible) {
+						throw new BuildException("Failed to set accessible method: {0}.", method.getMethod().getName());
+					}
 					invocationResult = method.getMethod().invoke(method.getInstance(), result, mainObject);
 
 					if (Boolean.FALSE.equals(invocationResult)) {
@@ -494,8 +499,12 @@ public class BuilderUtils {
 					}
 
 					if (fromName.equals(name)) {
-						field.setAccessible(true); // ensure we have access to
-						// the field, even if private
+						boolean accessible = field.trySetAccessible();
+						if(!accessible) {
+							logger.warn("Failed to set accessible on property {}", name);
+							continue;
+						}
+
 						Object value = null;
 						try {
 							value = field.get(caller);
@@ -743,9 +752,10 @@ public class BuilderUtils {
 		Map<String, Field> allFields = new HashMap<String, Field>();
 
 		for (Field field : typeClass.getDeclaredFields()) {
-			allFields.put(field.getName(), field);
-		//	field.setAccessible(true);
-			field.trySetAccessible();
+			boolean accessible = field.trySetAccessible();
+			if(accessible) {
+				allFields.put(field.getName(), field);
+			}
 		}
 
 		typeClass = typeClass.getSuperclass();
@@ -753,10 +763,11 @@ public class BuilderUtils {
 			Field[] fields = typeClass.getDeclaredFields();
 			for (Field field : fields) {
 				int mod = field.getModifiers();
-				if (!Modifier.isStatic(mod) && (Modifier.isPublic(mod))) {
-					allFields.put(field.getName(), field);
-					
-					field.trySetAccessible();
+				if (!Modifier.isStatic(mod) && (Modifier.isProtected(mod) || Modifier.isPublic(mod))) {
+					boolean accessible = field.trySetAccessible();
+					if(accessible) {
+						allFields.put(field.getName(), field);
+					}
 				}
 			}
 
@@ -798,9 +809,10 @@ public class BuilderUtils {
 		List<Method> allMethods = new ArrayList<Method>();
 
 		for (Method method : typeClass.getDeclaredMethods()) {
-			allMethods.add(method);
-			//method.setAccessible(true);
-			method.trySetAccessible();
+			boolean accessible = method.trySetAccessible();
+			if(accessible) {
+				allMethods.add(method);
+			}
 		}
 
 		typeClass = typeClass.getSuperclass();
@@ -808,9 +820,11 @@ public class BuilderUtils {
 			Method[] methods = typeClass.getDeclaredMethods();
 			for (Method method : methods) {
 				int mod = method.getModifiers();
-				if (!Modifier.isStatic(mod) && ( Modifier.isPublic(mod))) {
-					allMethods.add(method);
-					method.trySetAccessible();
+				if (!Modifier.isStatic(mod) && (Modifier.isProtected(mod) || Modifier.isPublic(mod))) {
+					boolean accessible = method.trySetAccessible();
+					if(accessible) {
+						allMethods.add(method);
+					}
 				}
 			}
 
@@ -1180,12 +1194,14 @@ public class BuilderUtils {
     public static Class<?> getGenericsTypeFromCollectionField(Field field) {
         Class<?> clazz = null;
         if (List.class.isAssignableFrom(field.getType()) || Set.class.isAssignableFrom(field.getType())) {
-            field.setAccessible(true);
-            ParameterizedType ptype = (ParameterizedType) field.getGenericType();
-            Type[] types = ptype.getActualTypeArguments();
-            if (types != null && types.length > 0) {
-                clazz = (Class<?>)types[0];
-            }
+			boolean accessible = field.trySetAccessible();
+			if(accessible) {
+				ParameterizedType ptype = (ParameterizedType) field.getGenericType();
+				Type[] types = ptype.getActualTypeArguments();
+				if (types != null && types.length > 0) {
+					clazz = (Class<?>)types[0];
+				}
+			}
         }
         return clazz;
     }
