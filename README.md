@@ -8,7 +8,7 @@ the project use reflection a lot.
 
 ## Gradle
 
-The project's artifacts are published on [JitPack](https://jitpack.io/#fedxyz/javabuilders-z)
+The project's artifacts are published on [![](https://jitpack.io/v/fedxyz/javabuilders-z.svg)](https://jitpack.io/#fedxyz/javabuilders-z)
 
 ```
     repositories {
@@ -19,8 +19,9 @@ The project's artifacts are published on [JitPack](https://jitpack.io/#fedxyz/ja
     dependencies {
       ...
 
-      implementation 'com.github.fedxyz.javabuilders-z:javabuilder-z-swing:1.3.1'
-      implementation 'com.github.fedxyz.javabuilders-z:javabuilder-z-swing-glazedlists:1.3.1'
+      implementation 'com.github.fedxyz.javabuilders-z:javabuilder-z-swing:<last version>'
+
+      implementation 'com.github.fedxyz.javabuilders-z:javabuilder-z-swing-glazedlists:<last version>'
     }
 
 ```
