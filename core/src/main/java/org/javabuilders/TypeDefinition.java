@@ -973,7 +973,11 @@ public class TypeDefinition implements IKeyValueConsumer, IApplicable {
 	 */
 	public TypeDefinition typeAsMethod(Class<?> type, Method method) {
 		BuilderUtils.validateNotNullAndNotEmpty("method", method);
-		method.setAccessible(true);
+		boolean accessible = method.trySetAccessible();
+		if(!accessible) {
+			logger.warn("could not set accessible on method: {}", method);
+			throw new IllegalArgumentException("could not male accessible method: " + method.getName());
+		}
 		typesAsMethods.put(type,method);
 		return this;
 	}
