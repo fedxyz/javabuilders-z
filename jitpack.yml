@@ -1,3 +1,3 @@
 before_install:
-   - sdk install java 8.0.412-tem
-   - sdk use java 8.0.412-tem
+   - sdk install java 6.0.119-zulu
+   - sdk use java 6.0.119-zulu
